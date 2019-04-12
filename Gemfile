@@ -21,6 +21,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails', '~> 5.0.1'
   gem 'faker'
+  gem 'shoulda-matchers', '~> 4.0.1'
+  gem 'rails-controller-testing'
 end
 
 group :development do
