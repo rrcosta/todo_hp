@@ -34,7 +34,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it 'creates a new user' do
-        expect{
+        expect {
           post :create, params: { user: { name: 'fuu' } }
         }.to change(User, :count).by(1)
       end
@@ -42,7 +42,7 @@ RSpec.describe UsersController, type: :controller do
 
     context 'with invalid params' do
       it 'not creates a new user' do
-        expect{
+        expect {
           post :create, params: { user: { name: nil } }
         }.to change(User, :count).by(0)
       end
@@ -80,7 +80,7 @@ RSpec.describe UsersController, type: :controller do
     let(:user1) { user_list[1].id }
 
     it 'destroy the requested user' do
-      expect{
+      expect {
         delete :destroy, params: { id: user1 }
       }.to change(User, :count)
     end

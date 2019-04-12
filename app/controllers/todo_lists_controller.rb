@@ -9,8 +9,7 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
-  def show
-  end
+  def show; end
 
   # GET /todo_lists/new
   def new
@@ -18,8 +17,7 @@ class TodoListsController < ApplicationController
   end
 
   # GET /todo_lists/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /todo_lists
   # POST /todo_lists.json
@@ -28,7 +26,7 @@ class TodoListsController < ApplicationController
 
     respond_to do |format|
       if @todo_list.save
-        format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
+        format.html { redirect_to @todo_list, notice: "Todo list was successfully created." }
         format.json { render :show, status: :created, location: @todo_list }
       else
         format.html { render :new }
@@ -42,7 +40,7 @@ class TodoListsController < ApplicationController
   def update
     respond_to do |format|
       if @todo_list.update(todo_list_params)
-        format.html { redirect_to @todo_list, notice: 'Todo list was successfully updated.' }
+        format.html { redirect_to @todo_list, notice: "Todo list was successfully updated." }
         format.json { render :show, status: :ok, location: @todo_list }
       else
         format.html { render :edit }
@@ -56,12 +54,13 @@ class TodoListsController < ApplicationController
   def destroy
     @todo_list.destroy
     respond_to do |format|
-      format.html { redirect_to todo_lists_url, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to todo_lists_url, notice: "Todo list was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
       @todo_list = TodoList.find(params[:id])
