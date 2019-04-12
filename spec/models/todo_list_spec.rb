@@ -1,5 +1,14 @@
 require "rails_helper"
 
 RSpec.describe TodoList, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validations" do
+    let(:todo_list) { create(:todo_list) }
+
+    it "is valid with name field" do
+      expect(todo_list).to be_valid
+    end
+
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:description) }
+  end
 end
