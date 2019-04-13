@@ -2,6 +2,12 @@ require "rails_helper"
 
 RSpec.describe TodoListsController, type: :controller do
   let(:todo_list) { create(:todo_list) }
+  let!(:user) { create(:user) }
+
+  before do
+    sign_in user
+    get :index
+  end
 
   describe "GET #index" do
     before { get :index }
