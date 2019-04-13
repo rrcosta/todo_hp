@@ -23,6 +23,7 @@ class TodoListsController < ApplicationController
   # POST /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
+    @todo_list.user_id = current_user.id
 
     respond_to do |format|
       if @todo_list.save
@@ -70,4 +71,6 @@ class TodoListsController < ApplicationController
     def todo_list_params
       params.require(:todo_list).permit(:title, :description, :done, :user_id)
     end
+
+
 end
