@@ -22,12 +22,6 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    before { get :new }
-
-    it { is_expected.to render_template(:new) }
-  end
-
   describe "GET #edit" do
     it 'returns a success response' do
       get :edit, params: { id: user.to_param, name: 'Foox' }
