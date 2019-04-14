@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirme sua Senha
+  users:
+    actions:
+      create_user: Criar Usuário
+      remove_user: Remover usuário
+      are_you_sure_to_remove_user_html: Tem certeza que deseja excluir o usuário <b>%{user}</b>?
+    add_user:
+      successfully_added: Usuário associado com sucesso.
+    remove_user:
+      successfully_removed: Usuário removido com sucesso.
