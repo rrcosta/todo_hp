@@ -4,7 +4,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = current_user.TodoList
   end
 
   # GET /todo_lists/1
@@ -64,13 +64,11 @@ class TodoListsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
-      @todo_list = TodoList.find(params[:id])
+      @todo_list = current_user.TodoList.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
       params.require(:todo_list).permit(:title, :description, :done, :user_id)
     end
-
-
 end
