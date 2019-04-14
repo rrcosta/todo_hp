@@ -1,7 +1,13 @@
 require "rails_helper"
 
 RSpec.describe TodoListsController, type: :controller do
-  let(:todo_list) { create(:todo_list) }
+  let!(:user) { create(:user) }
+  let!(:todo_list) { create(:todo_list, user: user) }
+
+  before do
+    sign_in user
+    get :index
+  end
 
   describe "GET #index" do
     before { get :index }
@@ -66,10 +72,9 @@ RSpec.describe TodoListsController, type: :controller do
   end
 
   describe "PUT #update" do
-    context 'with valid params' do
-      let(:todo_list) { create(:todo_list) }
-      let(:todo_listId) { todo_list.id }
+    let(:todo_listId) { todo_list.id }
 
+    context 'with valid params' do
       it 'changes register' do
         put :update, params: { id: todo_listId,
                                todo_list: { title: 'zooo',
@@ -83,9 +88,6 @@ RSpec.describe TodoListsController, type: :controller do
     end
 
     context 'with invalid params' do
-      let(:todo_list) { create(:todo_list) }
-      let(:todo_listId) { todo_list.id }
-
       it 'changes register' do
         put :update, params: { id: todo_listId,
                                todo_list: { title: nil,
@@ -100,7 +102,7 @@ RSpec.describe TodoListsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    let(:todo_list) { create_list(:todo_list, 2) }
+    let(:todo_list) { create_list(:todo_list, 2, user: user) }
     let(:todo_list1) { todo_list[1].id }
 
     it "destoy the requested todo_list" do
