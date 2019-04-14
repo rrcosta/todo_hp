@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe TodoList, type: :model do
+  context "Associations" do
+    it { is_expected.to belong_to :user }
+  end
+
   context "validations" do
     let(:todo_list) { create(:todo_list) }
 
