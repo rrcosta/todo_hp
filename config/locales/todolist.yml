@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      todo_list:
+        one: Tarefa
+        other: Tarefas
+    attributes:
+      todo_list:
+        title: Titulo
+        description: Descrição
+        done: Feito?
+  todo_lists:
+    actions:
+      create_todolist: Criar tarefa
+      remove_todolist: Remover tarefa
+      msg_remove_todo: Tem certeza que deseja excluir a tarefa?
+    add_todolist:
+      successfully_added: Tarefa criada com sucesso.
+    remove_todolist:
+      successfully_removed: Tarefa removida com sucesso.
