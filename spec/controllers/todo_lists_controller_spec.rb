@@ -4,8 +4,6 @@ RSpec.describe TodoListsController, type: :controller do
   let!(:user) { create(:user) }
   let!(:todo_list) { create(:todo_list, user: user) }
 
-  # let!(:completed) { create(:todo_list, user: user, done: true) }
-
   before do
     sign_in user
     get :index
