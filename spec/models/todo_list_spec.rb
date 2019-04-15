@@ -18,9 +18,9 @@ RSpec.describe TodoList, type: :model do
 
   context "scopes" do
     describe ".pending" do
-      let!(:todo_pending){ create(:todo_list, done: false) }
+      let!(:todo_pending) { create(:todo_list, done: false) }
 
-      it 'returns all todolist done pending' do
+      it "returns all todolist done pending" do
         expect(
           described_class.all.pending.size
         ).to eql(1)
@@ -28,9 +28,9 @@ RSpec.describe TodoList, type: :model do
     end
 
     describe ".completed" do
-      let!(:todo_completed){ create(:todo_list, done: true) }
+      let!(:todo_completed) { create(:todo_list, done: true) }
 
-      it 'returns all todolist done completed' do
+      it "returns all todolist done completed" do
         expect(
           described_class.all.completed.size
         ).to eql(1)
@@ -40,10 +40,10 @@ RSpec.describe TodoList, type: :model do
     describe ".group_by_status" do
       let!(:todo_true) { create(:todo_list, done: true) }
 
-      it 'returns the number of status/done' do
+      it "returns the number of status/done" do
         expect(
           described_class.group_by_status
-        ).to eql({true => 1})
+        ).to eql(true => 1)
       end
     end
   end

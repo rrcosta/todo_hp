@@ -18,14 +18,14 @@ RSpec.describe TodoListsController, type: :controller do
   describe "GET #pending" do
     let(:params) do
       {
-        title: 'foobar',
-        description: 'saron roses',
+        title: "foobar",
+        description: "saron roses",
         done: false,
         user_id: user.id
       }
     end
 
-    it '#pending' do
+    it "#pending" do
       expect(
         get :pending, params: { todo_list: params }
       ).to render_template("todo_lists/pending")
@@ -35,14 +35,14 @@ RSpec.describe TodoListsController, type: :controller do
   describe "GET #completed" do
     let(:params) do
       {
-        title: 'foobar',
-        description: 'saron roses',
+        title: "foobar",
+        description: "saron roses",
         done: true,
         user_id: user.id
       }
     end
 
-    it '#completed' do
+    it "#completed" do
       expect(
         get :completed, params: { todo_list: params }
       ).to render_template("todo_lists/completed")
@@ -50,7 +50,7 @@ RSpec.describe TodoListsController, type: :controller do
   end
 
   describe "GET #show" do
-    it 'returns a success response' do
+    it "returns a success response" do
       get :show, params: { id: todo_list.to_param }
 
       expect(response).to be_successful
@@ -64,8 +64,8 @@ RSpec.describe TodoListsController, type: :controller do
   end
 
   describe "GET #edit" do
-    it 'returns a success response' do
-      get :edit, params: { id: todo_list.to_param, title: 'test' }
+    it "returns a success response" do
+      get :edit, params: { id: todo_list.to_param, title: "test" }
 
       expect(response).to be_successful
     end
@@ -75,23 +75,23 @@ RSpec.describe TodoListsController, type: :controller do
     let(:user) { create(:user) }
 
     context "with valid params" do
-      it 'creates a new todo_list' do
-        expect {
+      it "creates a new todo_list" do
+        expect do
           post :create, params: {
             todo_list: {
-              title: 'foobar',
-              description: 'baz',
+              title: "foobar",
+              description: "baz",
               done: false,
               user_id: user.id
             }
           }
-        }.to change(TodoList, :count).by(1)
+        end.to change(TodoList, :count).by(1)
       end
     end
 
     context "with invalid params" do
-      it 'not creates a new todo_list' do
-        expect {
+      it "not creates a new todo_list" do
+        expect do
           post :create, params: {
             todo_list: {
               title: nil,
@@ -100,7 +100,7 @@ RSpec.describe TodoListsController, type: :controller do
               user_id: user.id
             }
           }
-        }.to change(TodoList, :count).by(0)
+        end.to change(TodoList, :count).by(0)
       end
     end
   end
@@ -108,28 +108,28 @@ RSpec.describe TodoListsController, type: :controller do
   describe "PUT #update" do
     let(:todo_listId) { todo_list.id }
 
-    context 'with valid params' do
-      it 'changes register' do
+    context "with valid params" do
+      it "changes register" do
         put :update, params: { id: todo_listId,
-                               todo_list: { title: 'zooo',
-                                            description: 'change idea',
+                               todo_list: { title: "zooo",
+                                            description: "change idea",
                                           }
                               }
 
-        expect(response.content_type).to eq('text/html')
+        expect(response.content_type).to eq("text/html")
         expect(response.status).to eq(302)
       end
     end
 
-    context 'with invalid params' do
-      it 'changes register' do
+    context "with invalid params" do
+      it "changes register" do
         put :update, params: { id: todo_listId,
                                todo_list: { title: nil,
                                             description: nil,
                                           }
                               }
 
-        expect(response.content_type).to eq('text/html')
+        expect(response.content_type).to eq("text/html")
         expect(response.status).not_to eq(302)
       end
     end
@@ -140,9 +140,9 @@ RSpec.describe TodoListsController, type: :controller do
     let(:todo_list1) { todo_list[1].id }
 
     it "destoy the requested todo_list" do
-      expect{
+      expect  do
         delete :destroy, params: { id: todo_list1 }
-      }.to change(TodoList, :count)
+      end.to change(TodoList, :count)
     end
   end
 end
