@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'todo_lists#index'
 
   resources :todo_lists
-  resources :users
+  resources :users, except: :new
 end

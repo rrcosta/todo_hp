@@ -5,5 +5,14 @@
   <%= @user.name %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Usuario deste</strong>
+  <%= @user.created_at.strftime('%d/%m/%Y') %>
+</p>
+
 <%= link_to 'Back', users_path %>

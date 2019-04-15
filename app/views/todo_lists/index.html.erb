@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Todo Lists</h1>
+<h1 class="ui header"><%= plural_model_name(TodoList) %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Done</th>
-      <th>User</th>
+      <th><%= TodoList.human_attribute_name(:title) %></th>
+      <th><%= TodoList.human_attribute_name(:description) %></th>
+      <th><%= TodoList.human_attribute_name(:done) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +17,17 @@
       <tr>
         <td><%= todo_list.title %></td>
         <td><%= todo_list.description %></td>
-        <td><%= todo_list.done %></td>
-        <td><%= todo_list.user.name %></td>
+        <td>
+          <% if todo_list.done %>
+              <span class="ui green label">
+                Concluido
+              </span>
+          <% else %>
+              <span class="ui red label">
+                Pendente
+              </span>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', todo_list %></td>
         <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
         <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
