@@ -1,0 +1,34 @@
+<table class="ui single line center table">
+  <thead>
+    <tr>
+      <th><%= TodoList.human_attribute_name(:title) %></th>
+      <th><%= TodoList.human_attribute_name(:description) %></th>
+      <th><%= TodoList.human_attribute_name(:done) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_lists.each do |todo_list| %>
+      <tr>
+        <td class='truncate'><%= todo_list.title %></td>
+        <td class='truncate'><%= todo_list.description %></td>
+        <td>
+          <% if todo_list.done %>
+            <span class="ui green label">
+              Concluido
+            </span>
+          <% else %>
+            <span class="ui red label">
+              Pendente
+            </span>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', todo_list %></td>
+        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

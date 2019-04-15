@@ -60,6 +60,14 @@ class TodoListsController < ApplicationController
     end
   end
 
+  def pending
+    @todo_lists = current_user.TodoList.all.pending
+  end
+
+  def completed
+    @todo_lists = current_user.TodoList.all.completed
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

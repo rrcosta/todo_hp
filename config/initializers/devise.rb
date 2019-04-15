@@ -1,7 +1,7 @@
 Devise.setup do |config|
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   config.case_insensitive_keys = [:email]
 
@@ -23,4 +23,3 @@ Devise.setup do |config|
 
   config.sign_out_via = :delete
 end
-
