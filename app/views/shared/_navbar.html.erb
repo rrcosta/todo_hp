@@ -1,6 +1,39 @@
 <% if user_signed_in? %>
-  Bem Vindo <%= current_user.name %>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "login", new_user_session_path %>
+  <div class="ui teal inverted menu">
+    <div class="ui container">
+      <%= link_to 'To Do Hug Pay', root_path, class: 'header item blue' %>
+
+      <%= link_to 'Dashboard', todo_lists_path, class: 'ui item' %>
+
+      <div class="ui simple dropdown item">
+        <span>Tarefas</span>
+
+        <i class="dropdown icon"></i>
+
+        <div class="menu">
+          <%= link_to 'Todas as Tarefas', todo_lists_path, class: 'ui item' %>
+          <%= link_to 'Pendentes', pending_path, class: 'item' %>
+          <%= link_to 'Completadas', completed_path, class: 'item' %>
+        </div>
+      </div>
+
+      <%= link_to 'Usuários', users_path, class: 'ui item' %>
+
+      <div class="right menu">
+        <div class="ui simple dropdown item">
+          <span><%= current_user.name %> - <%= current_user.email %></span>
+
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <%= link_to(
+              'Sair',
+              destroy_user_session_path,
+              method: :delete,
+              class: 'ui item'
+            ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
