@@ -3,4 +3,5 @@ pt-BR:
     actions:
       show: Detalhes
       edit: Editar
-      destroy: Apagar?
+      destroy: Remover
+      confirm_destroy: Você realmente deseja apagar?

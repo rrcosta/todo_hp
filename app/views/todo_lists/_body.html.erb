@@ -24,9 +24,9 @@
             </span>
           <% end %>
         </td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('general.actions.show'), todo_list %></td>
+        <td><%= link_to t('general.actions.edit'), edit_todo_list_path(todo_list) %></td>
+        <td><%= link_to t('general.actions.destroy'), todo_list, method: :delete, data: { confirm: t('general.actions.confirm_destroy') } %></td>
       </tr>
     <% end %>
   </tbody>
