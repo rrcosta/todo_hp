@@ -1,24 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>
+    <%= TodoList.human_attribute_name(:title) %>
+  </strong>
   <%= @todo_list.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>
+    <%= TodoList.human_attribute_name(:description) %>
+  </strong>
   <%= @todo_list.description %>
 </p>
 
 <p>
-  <strong>Done:</strong>
+  <strong>
+   <%= TodoList.human_attribute_name(:done) %>
+  </strong>
   <%= @todo_list.done %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @todo_list.user.name %>
-</p>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
