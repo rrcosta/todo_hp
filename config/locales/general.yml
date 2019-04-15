@@ -1,0 +1,6 @@
+pt-BR:
+  general:
+    actions:
+      show: Detalhes
+      edit: Editar
+      destroy: Apagar?
