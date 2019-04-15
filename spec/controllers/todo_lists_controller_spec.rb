@@ -4,6 +4,8 @@ RSpec.describe TodoListsController, type: :controller do
   let!(:user) { create(:user) }
   let!(:todo_list) { create(:todo_list, user: user) }
 
+  # let!(:completed) { create(:todo_list, user: user, done: true) }
+
   before do
     sign_in user
     get :index
@@ -13,6 +15,40 @@ RSpec.describe TodoListsController, type: :controller do
     before { get :index }
 
     it { is_expected.to render_template(:index) }
+  end
+
+  describe "GET #pending" do
+    let(:params) do
+      {
+        title: 'foobar',
+        description: 'saron roses',
+        done: false,
+        user_id: user.id
+      }
+    end
+
+    it '#pending' do
+      expect(
+        get :pending, params: { todo_list: params }
+      ).to render_template("todo_lists/pending")
+    end
+  end
+
+  describe "GET #completed" do
+    let(:params) do
+      {
+        title: 'foobar',
+        description: 'saron roses',
+        done: true,
+        user_id: user.id
+      }
+    end
+
+    it '#completed' do
+      expect(
+        get :completed, params: { todo_list: params }
+      ).to render_template("todo_lists/completed")
+    end
   end
 
   describe "GET #show" do
