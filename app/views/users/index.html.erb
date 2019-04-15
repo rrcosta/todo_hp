@@ -17,8 +17,21 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= link_to t('general.actions.show'), user %></td>
-        <td><%= link_to t('general.actions.edit'), edit_user_path(user), class: "ui small disabled" %></td>
-        <td><%= link_to t('general.actions.destroy'), user, method: :delete, data: { confirm: t('general.actions.confirm_destroy') } %></td>
+        <% if current_user.id == user.id %>
+          <td>
+            <%= link_to t('general.actions.edit'), edit_user_path(user) %>
+          </td>
+          <td>
+            <%= link_to t('general.actions.destroy'), user,
+                method: :delete, data: {
+                  confirm: t('general.actions.confirm_destroy')
+                }
+            %>
+          </td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
