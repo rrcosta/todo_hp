@@ -8,7 +8,7 @@ pt-BR:
       todo_list:
         title: Titulo
         description: Descrição
-        done: Feito?
+        done: Completado?
   todo_lists:
     actions:
       create_todolist: Criar tarefa
