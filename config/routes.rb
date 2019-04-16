@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get "pending", to: "todo_lists#pending"
   get "completed", to: "todo_lists#completed"
+  get "dashboard", to: "todo_lists#dashboard"
 end

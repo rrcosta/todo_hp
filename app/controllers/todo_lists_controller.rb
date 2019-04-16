@@ -1,3 +1,4 @@
+# TodoLists Controller
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
@@ -66,6 +67,14 @@ class TodoListsController < ApplicationController
 
   def completed
     @todo_lists = current_user.TodoList.all.completed
+  end
+
+  def dashboard
+    @dashboard = current_user.TodoList.all.group_by_status
+
+    @dashboard["pendente"] = @dashboard.delete(false) if @dashboard[false]
+    @dashboard["completada"] = @dashboard.delete(true)  if @dashboard[true]
+    @dashboard
   end
 
   private

@@ -14,8 +14,13 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
-gem 'semantic-ui-sass'
+gem "semantic-ui-sass"
+gem "chartkick"
 
+# No teste foi pedido para adicionar a gema Nokogiri
+# Esta gema tem a finalidade de parsear HTML/XML e nao sera utilizada
+# neste projeto
+# gem "nokogiri"
 
 group :development, :test do
   gem "pry-byebug"
