@@ -71,8 +71,8 @@ class TodoListsController < ApplicationController
   def dashboard
     @dashboard = current_user.TodoList.all.group_by_status
 
-    @dashboard['pendente']  = @dashboard.delete(false) if @dashboard[false]
-    @dashboard['completada'] = @dashboard.delete(true)  if @dashboard[true]
+    @dashboard["pendente"] = @dashboard.delete(false) if @dashboard[false]
+    @dashboard["completada"] = @dashboard.delete(true)  if @dashboard[true]
     @dashboard
   end
 
