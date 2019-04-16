@@ -68,6 +68,10 @@ class TodoListsController < ApplicationController
     @todo_lists = current_user.TodoList.all.completed
   end
 
+  def dashboard
+    @dashboard = current_user.TodoList.all.group_by_status
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

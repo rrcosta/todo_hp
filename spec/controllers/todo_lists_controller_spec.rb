@@ -49,6 +49,23 @@ RSpec.describe TodoListsController, type: :controller do
     end
   end
 
+  describe "GET #dashboard" do
+    let(:params) do
+      {
+        title: "foobar",
+        description: "saron roses",
+        done: true,
+        user_id: user.id
+      }
+    end
+
+    it "#dashboard" do
+      expect(
+        get :dashboard, params: { todo_list: params }
+      ).to render_template("todo_lists/dashboard")
+    end
+  end
+
   describe "GET #show" do
     it "returns a success response" do
       get :show, params: { id: todo_list.to_param }
