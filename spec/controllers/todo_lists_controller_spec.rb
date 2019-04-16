@@ -68,10 +68,19 @@ RSpec.describe TodoListsController, type: :controller do
   end
 
   describe "GET #show" do
+    let!(:user2) { create(:user) }
+    let!(:todo_list2) { create(:todo_list, user: user2) }
+
     it "returns a success response" do
       get :show, params: { id: todo_list.to_param }
 
       expect(response).to be_successful
+    end
+
+    it "render not found page" do
+      get :show, params: { id: todo_list2.to_param }
+
+      expect(response.status).to be(404)
     end
   end
 
