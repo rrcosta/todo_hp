@@ -1,5 +1,22 @@
 <h1>Dashboard</h1>
 
-<% @dashboard.each do |dash| %>
-  <%= dash %>
-<% end %>
+<div class="ui teal one cards">
+  <div class="teal card">
+    <div class="content">
+      <div class="header">
+      </div>
+      <div class="meta">
+        Tarefas
+      </div>
+      <div class="description"></div>
+      <br>
+      <div>
+      <br>
+        <%= pie_chart @dashboard,
+            colors: ["#f4c430", "#245e71", "#A2F6A2", "#005500"],
+            label: "Tarefas"
+        %>
+    </div>
+  </div>
+  <br>
+</div>
