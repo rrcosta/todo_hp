@@ -11,7 +11,8 @@ pt-BR:
         done: Completado?
   todo_lists:
     actions:
-      create_todolist: Criar tarefa
+      create_todoList: Criar tarefa
+      edit_todoList: Editar tarefa
       remove_todolist: Remover tarefa
       msg_remove_todo: Tem certeza que deseja excluir a tarefa?
     add_todolist:
