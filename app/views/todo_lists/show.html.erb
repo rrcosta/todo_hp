@@ -1,26 +1,29 @@
-<p id="notice"><%= notice %></p>
+<br>
+<div class="ui two column grid">
+  <div class="column">
+    <div class="ui raised segment">
+      <% if @todo_list.done %>
+        <a class="ui teal ribbon label">Concluido</a>
+      <% else %>
+        <a class="ui yellow ribbon label">Pendente</a>
+      <% end %>
+      <p></p>
+      <span>
+        <p><strong>Tarefa:</strong></p>
+        <%= @todo_list.title %>
+      </span>
+      <p></p>
 
-<p>
-  <strong>
-    <%= TodoList.human_attribute_name(:title) %>
-  </strong>
-  <%= @todo_list.title %>
-</p>
+      <span>
+        <p><strong>Descrição:</strong></p>
+        <div class='truncate_description'>
+        <%= @todo_list.description %>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>
-    <%= TodoList.human_attribute_name(:description) %>
-  </strong>
-  <%= @todo_list.description %>
-</p>
-
-<p>
-  <strong>
-   <%= TodoList.human_attribute_name(:done) %>
-  </strong>
-  <%= @todo_list.done %>
-</p>
-
-
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+<br>
+<%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Voltar', todo_lists_path %>
