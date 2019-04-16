@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-
 <h1 class="ui header"><%= plural_model_name(User) %></h1>
 
-<table>
+<table class="ui teal single line center table">
   <thead>
     <tr>
       <th><%= User.human_attribute_name(:name) %></th>
@@ -17,12 +16,21 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to t('general.actions.show'), user %></td>
         <% if current_user.id == user.id %>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
           <td>
-            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to t('general.actions.edit'), edit_user_path(user) %>
           </td>
+          <td>
+            <%= link_to t('general.actions.destroy'), user,
+                method: :delete, data: {
+                  confirm: t('general.actions.confirm_destroy')
+                }
+            %>
+          </td>
+        <% else %>
+          <td></td>
+          <td></td>
         <% end %>
       </tr>
     <% end %>

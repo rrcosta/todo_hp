@@ -1,4 +1,4 @@
-<table class="ui single line center table">
+<table class="ui teal single line center table">
   <thead>
     <tr>
       <th><%= TodoList.human_attribute_name(:title) %></th>
@@ -16,17 +16,17 @@
         <td>
           <% if todo_list.done %>
             <span class="ui green label">
-              Concluido
+              Completada
             </span>
           <% else %>
-            <span class="ui red label">
+            <span class="ui yellow label">
               Pendente
             </span>
           <% end %>
         </td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('general.actions.show'), todo_list %></td>
+        <td><%= link_to t('general.actions.edit'), edit_todo_list_path(todo_list) %></td>
+        <td><%= link_to t('general.actions.destroy'), todo_list, method: :delete, data: { confirm: t('general.actions.confirm_destroy') } %></td>
       </tr>
     <% end %>
   </tbody>
