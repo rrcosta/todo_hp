@@ -17,11 +17,6 @@ gem "devise"
 gem "semantic-ui-sass"
 gem "chartkick"
 
-# No teste foi pedido para adicionar a gema Nokogiri
-# Esta gema tem a finalidade de parsear HTML/XML e nao sera utilizada
-# neste projeto
-# gem "nokogiri"
-
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.8"
@@ -30,6 +25,7 @@ group :development, :test do
   gem "faker"
   gem "shoulda-matchers", "~> 4.0.1"
   gem "rails-controller-testing"
+  gem "rspec-percentage-formatter"
 end
 
 group :development do
