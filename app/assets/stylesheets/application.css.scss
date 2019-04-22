@@ -1,3 +1,4 @@
+@cyan : #006064;
 @import 'semantic-ui';
 
 .truncate {
@@ -8,4 +9,18 @@
 
 .truncate_description {
 	word-wrap: break-word
+}
+
+.ui.cyan {
+	background-color: #00838f;
+	color: #E0F2F1;
+}
+
+.ui.menu    .item {
+    color: #EDF2F2;
+}
+
+ui.yellow {
+	background-color: #006064;
+	color: whitesmoke;
 }
