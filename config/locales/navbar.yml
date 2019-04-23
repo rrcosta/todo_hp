@@ -1,0 +1,10 @@
+---
+pt-BR:
+  todo: 'Tarefas'
+  dashboard: 'Dashboard'
+  user: 'Usuários'
+  all: 'Todas as Tarefas'
+  pending: 'Pendentes'
+  completed: 'Completadas'
+  exit: 'Sair'
+
