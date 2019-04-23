@@ -1,0 +1,38 @@
+pt-BR:
+  male:
+    new: Novo %{resource}
+
+  new: Nova %{resource}
+  edit: Editar %{resource}
+  delete: Excluir %{resource}
+  link_to_new: Clique aqui para cadastrar
+  actions:
+    one: Ação
+    action: Ações
+    cancel: Cancelar
+    new: Novo
+    not_remove: Não remover
+    not_delete: Não excluir
+    delete: Excluir
+    exit: Sair
+    edit: Editar
+    create: Criar
+    update: Atualizar
+    confirm: Confirmar
+    continue: Continuar
+    finish: Concluir
+    save: Salvar
+    active: Ativo
+    inactive: Inativo
+    details: Detalhes
+    back_index: Voltar para listagem de %{destiny}
+    search: Pesquisar
+    input_keyword: Digite uma palavra chave
+    input_id: Digite o ID do embarque
+  information_list:
+    not_exists:
+      male: Ainda não há %{thing} cadastrados
+      female: Ainda não há %{thing} cadastradas
+    no_data_found:
+      male: Nenhum registro de %{thing} foi encontrado
+      female: Nenhum registro de %{thing} foi encontrada
