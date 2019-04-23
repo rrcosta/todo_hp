@@ -1,4 +1,5 @@
 <h1>Dashboard</h1>
+<br><br>
 
 <div class="ui grid">
   <div class="row">
@@ -9,7 +10,7 @@
             <div class="header"></div>
             <div class="meta">Quantidade de itens Pendente(s): </div>
             <div class="description"></div>
-              <h3><%= @dashboard['pendente'] %></h3>
+              <h3><%= @dashboard['pendente'].blank? ? 0: @dashboard['pendente']  %></h3>
           </div>
         </div>
       </div>
@@ -22,7 +23,7 @@
             <div class="header"></div>
             <div class="meta">Quantidade de itens Completada(s):</div>
             <div class="description"></div>
-              <h3><%= @dashboard['completada'] %></h3>
+              <h3><%= @dashboard['completada'].blank? ? 0 : @dashboard['completada'] %></h3>
           </div>
         </div>
       </div>
