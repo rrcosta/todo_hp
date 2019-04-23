@@ -26,6 +26,7 @@ group :development, :test do
   gem "shoulda-matchers", "~> 4.0.1"
   gem "rails-controller-testing"
   gem "rspec-percentage-formatter"
+  gem "dotenv-rails"
 end
 
 group :development do
