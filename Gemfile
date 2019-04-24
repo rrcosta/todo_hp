@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.1"
 
 gem "rails", "~> 5.2.3"
-gem "sqlite3"
+gem "pg"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -26,6 +26,7 @@ group :development, :test do
   gem "shoulda-matchers", "~> 4.0.1"
   gem "rails-controller-testing"
   gem "rspec-percentage-formatter"
+  gem "dotenv-rails"
 end
 
 group :development do
