@@ -76,6 +76,12 @@ gem install rails --version=5.2.3
 
 Obs: dependendo das configurações de sua maquina, este processo poderá demorar, mas não se preoucupe esse é o único passo que poderá demorar um pouco ;)
 
+* PostgreSQL
+
+Para instalação do Postgresql, entre neste tutorial e mande brasa na instação de um dos melhores BD gratuidos para se trabalhar!
+
+https://www.edivaldobrito.com.br/como-instalar-o-postgresql-9-4-no-ubuntu-e-centos/
+
 
 ### Procedimentos que deverá efetuar para subir o ambiente
 
@@ -87,11 +93,18 @@ Obs: dependendo das configurações de sua maquina, este processo poderá demora
 
         $ bundle install
 
-3. Faça o setup do banco de dados: Criação do Banco de Dados
+3. Copie o conteúdo do arquivo .env.example para o arquivo .env e altere com as credenciais de seu ambiente local
+
+        $ cp .env.example .env
+
+4. Abra o arquivo .env e coloque os seus dados de acesso do seu banco de dados Postgrsql
+
+
+5. Faça o setup do banco de dados: Criação do Banco de Dados
 
         $ bin/rails db:create
 
-4. Faça o setup do banco de dados: Criação das tabelas Banco de Dados
+6. Faça o setup do banco de dados: Criação das tabelas Banco de Dados
 
         $ bin/rails db:migrate
 
@@ -103,4 +116,6 @@ Obs: dependendo das configurações de sua maquina, este processo poderá demora
 
 9. Após cadastrar o usuário, logue-se na aplicação e cria as tarefas desejadas
 
-* ...
+10. Visualize o Dasboard com o gráfico de pizza e os totais de tarefas realizadas e pendentes.
+
+
