@@ -16,6 +16,10 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
 gem "semantic-ui-sass"
 gem "chartkick"
+gem "jquery-rails"
+gem "momentjs-rails"
+gem "fullcalendar"
+
 
 group :development, :test do
   gem "pry-byebug"
