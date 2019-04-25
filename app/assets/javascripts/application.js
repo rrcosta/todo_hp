@@ -15,5 +15,6 @@
 //= require Chart.bundle
 //= require chartkick
 //= require turbolinks
+//= require calendar
 //= require semantic-ui
 //= require_tree .
